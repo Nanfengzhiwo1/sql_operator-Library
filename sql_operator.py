@@ -37,9 +37,11 @@ class sql_operator:
         self.cur.execute(f"SELECT {key} FROM {table} WHERE {limit_key} ='{limit_value}'")
         result_tup =self.cur.fetchone()
         # print(result_tup)
-        result=str(result_tup[0])
-
-        return result
+        if result_tup is not None:
+            result=str(result_tup[0])
+            return result
+        else:
+            return None
     
     def match_key(self,table:str,key:str,key_value:str) -> bool:
         """
@@ -55,10 +57,8 @@ class sql_operator:
         self.cur.execute(match_data)
         result=self.cur.fetchone()
         if result:
-            print("T")
             return True
         else:
-            print("F")
             return False
     
 
@@ -78,11 +78,11 @@ class sql_operator:
         insert_data=f'insert into {table} ({keys}) values({values})'
         self.cur.execute(insert_data)
         # print(insert_data)
-        self.con.commit()
+
         
 
 
-    def update(self,table:str,limit_key:str,limit_value:str,key:str,value:str)->None:
+    def update(self,table:str,limit_key:str,limit_value:str,key:str,Targetvalue:str)->None:
         """
         Update the data in database table
 
@@ -90,14 +90,14 @@ class sql_operator:
             limit_key:Key of the constraint
             limit_value:Value of the constraint
             key: The key that corresponds to the value
-            value: Value of the update
+            value: Value of the target update
 
             E.g:    ' update table set key= value where limit_key = limit_value '
         """
-        update_data=f'update {table} set {key}="{value}" where {limit_key}="{limit_value}" '
+        update_data=f'update {table} set {key}="{Targetvalue}" where {limit_key}="{limit_value}" '
         self.cur.execute(update_data)
         # print(update_data)
-        self.con.commit()
+
 
     def get_column(self,key:str,table:str)->list:
         '''
@@ -112,3 +112,6 @@ class sql_operator:
         temp_keys=self.cur.fetchall()
         keys=list_tupl2list_str(temp_keys)
         return keys
+    
+    def commit(self):
+        self.con.commit()

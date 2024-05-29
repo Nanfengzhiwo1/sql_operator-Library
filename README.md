@@ -22,5 +22,23 @@
   ![image](https://github.com/Nanfengzhiwo1/sql_operator-Library/assets/107869748/c37b46eb-16a4-40b8-964c-2ee2c26eba3c)
 
 # Usage
+  ## database
   ![image](https://github.com/Nanfengzhiwo1/sql_operator-Library/assets/107869748/0bd37d4c-c0d0-467a-832c-8852f7a61242)
+
+  ## operate
+
+  ### search
+  ![image](https://github.com/Nanfengzhiwo1/sql_operator-Library/assets/107869748/e11a7dfa-c598-4979-b788-f96aa5d8d930)
+
+  ### match_key
+  ![image](https://github.com/Nanfengzhiwo1/sql_operator-Library/assets/107869748/dcaefae4-d904-41c4-b6d1-72b39b9e3df0)
+
+  ### insert
+  ![image](https://github.com/Nanfengzhiwo1/sql_operator-Library/assets/107869748/177d747f-ccbc-49c0-9d92-9f2350c7bd7f)
+
+  ### update
+  <img width="677" alt="企业微信截图_1716975525390" src="https://github.com/Nanfengzhiwo1/sql_operator-Library/assets/107869748/5f6bd54d-e0c8-4690-b53b-7d4ffe9b7e99">
+
+  ### get_column
+  ![image](https://github.com/Nanfengzhiwo1/sql_operator-Library/assets/107869748/401836fb-5359-437e-aad3-467cdf3efa0b)
 
